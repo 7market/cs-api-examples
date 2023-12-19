@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "es2022",
+    "noImplicitAny": true,
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "declaration": true,
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "declarationMap": true,
+    "outDir": "./dist",
+  },
+  "include": [
+    "./examples/**/*.ts",
+    "./generated-api/**/*.ts",
+    "./utils/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "./dist/**/*"
+  ],
+}
