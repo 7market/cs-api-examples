@@ -7,7 +7,7 @@ import WebSocket from 'ws';
 import { MarketApi } from '../utils/auto-api';
 import { wsParseMessage } from '../utils/ws-parse-messages';
 
-const WS_HOST_URL = 'wss://cs7.market';
+const WS_HOST_URL = 'wss://ws.cs7.market';
 // Your API Key from https://cs7.market/profile/trade-api
 const API_KEY = '';
 

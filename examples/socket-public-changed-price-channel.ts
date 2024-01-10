@@ -7,7 +7,7 @@ import WebSocket from 'ws';
 import { I7MarketEWsChannel } from '../generated-api/cs7market-api';
 import { wsParseMessage } from '../utils/ws-parse-messages';
 
-const WS_HOST_URL = 'wss://cs7.market';
+const WS_HOST_URL = 'wss://ws.cs7.market';
 
 const centrifuge = new Centrifuge(`${WS_HOST_URL}/connection/websocket`, {
   websocket: WebSocket,
@@ -26,7 +26,6 @@ publicWs.subscribe();
 publicWs.on('publication', (message) => {
   const data = wsParseMessage(message);
   if (data.message === 'cs_item_price:updated') {
-    // console.log(data);
     console.log(`${data.data.market_hash_name} - $ ${(data.data.price/100).toFixed(2)}`);
   }
 });
