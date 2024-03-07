@@ -1,6 +1,7 @@
 # Examples for cs7.market
 
-Full list of endpoints https://cs7.market/docs/trade-api/
+Full list of endpoints https://cs7.market/docs/trade-api/  
+Telegram chat for help https://t.me/cs7market_dev  
 
 ## Preparation
 

@@ -4,7 +4,7 @@
  */
 import { Centrifuge } from 'centrifuge';
 import WebSocket from 'ws';
-import { I7MarketEWsChannel } from '../generated-api/cs7market-api';
+import { I7MarketWsChannel } from '../generated-api/cs7market-api';
 import { wsParseMessage } from '../utils/ws-parse-messages';
 
 const WS_HOST_URL = 'wss://ws.cs7.market';
@@ -19,7 +19,7 @@ centrifuge.on('connected', function () {
 
 centrifuge.connect();
 
-const publicWs = centrifuge.newSubscription(I7MarketEWsChannel.CsPriceUpdate);
+const publicWs = centrifuge.newSubscription(I7MarketWsChannel.CsPriceUpdate);
 
 publicWs.subscribe();
 
