@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Examples work with api",
   "scripts": {
-    "generate-api": "swagger-typescript-api -p  https://cs7.market/docs/trade-api/schema/  -o ./generated-api -n cs7market-api.ts -r --type-prefix I7Market --extract-request-params --route-types --axios"
+    "generate-api": "ts-node ./utils/build-swagger-api.ts"
   },
   "repository": {
     "type": "git",
@@ -16,7 +16,7 @@
   },
   "homepage": "https://github.com/cs7market/api-examples#readme",
   "dependencies": {
-    "axios": "^1.5.1",
+    "axios": "^1.6.8",
     "centrifuge": "^5.0.1",
     "qs": "^6.11.2",
     "swagger-typescript-api": "^13.0.3",
