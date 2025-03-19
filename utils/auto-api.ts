@@ -1,11 +1,11 @@
 import qs from 'qs';
-import { Api } from '../generated-api/cs7market-api';
+import { Api, HttpClient } from '../generated-api/cs7market-api';
 
 const API_HOST_URL = 'https://cs7.market';
 
 export class MarketApi extends Api<false> {
   constructor(apiKey: string) {
-    super({
+    super(new HttpClient({
       baseURL: API_HOST_URL,
       paramsSerializer: {
         serialize: (params) => {
@@ -15,6 +15,6 @@ export class MarketApi extends Api<false> {
       headers: {
         Authorization: `Token ${apiKey}`,
       },
-    });
+    }));
   }
 }

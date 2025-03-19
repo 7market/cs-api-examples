@@ -6,7 +6,7 @@ import axios from 'axios';
 const generateApiDTO = (spec: Spec) => {
   generateApi({
     name: 'cs7market-api',
-    output: resolve('../generated-api'),
+    output: resolve(__dirname, '../generated-api'),
     spec,
     // temporary not working. issue https://github.com/acacode/swagger-typescript-api/issues/659
     // url:'https://cs7.market/docs/trade-api/schema?lang=en',
@@ -33,7 +33,7 @@ const generateApiDTO = (spec: Spec) => {
 };
 
 // load schema manually from cs7.market
-axios.get('https://cs7.market/docs/trade-api/schema?lang=en')
+axios.get('https://cs7.market/docs/trade-api/schema?lang=en', { maxBodyLength: -1 })
   .then((res) => {
     generateApiDTO(res.data as Spec);
   });
